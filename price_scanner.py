@@ -31,6 +31,7 @@ for url in urls:
     item_name = driver.find_element_by_id("productTitle")
     try:
         price = driver.find_element_by_id("priceblock_ourprice")
+
     except:
         price = driver.find_element_by_id("priceblock_saleprice")
 
