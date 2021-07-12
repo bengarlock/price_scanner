@@ -44,8 +44,6 @@ def run_scan():
                 'image': picture
             }
             requests.patch(url=f'{endpoint}' + str(favorite['id']) + '/', data=payload)
-
-        # print(f"{item_name.text} - {price.text}")
         push_price(favorite, price.text)
         driver.quit()
 
