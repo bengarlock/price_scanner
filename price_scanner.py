@@ -57,4 +57,5 @@ n = True
 
 while n:
     run_scan()
+    print("Waiting 24 hours...")
     time.sleep(86400)
