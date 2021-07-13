@@ -15,6 +15,10 @@ def detect_system():
         path = os.path.abspath("chromedriver.exe")
         selenium_driver = webdriver.Chrome(path)
         return selenium_driver
+    elif platform.system() == 'Linux':
+        path = os.path.abspath("chromedriver-linux")
+        selenium_driver = webdriver.Chrome(path)
+        return selenium_driver
 
 
 def push_price(favorite, price):
