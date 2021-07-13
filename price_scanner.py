@@ -47,4 +47,5 @@ def run_scan():
         push_price(favorite, price.text)
         driver.quit()
 
+
 run_scan()
