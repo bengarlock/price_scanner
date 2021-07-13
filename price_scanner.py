@@ -2,6 +2,7 @@ from selenium import webdriver
 import requests
 import platform
 import os
+import time
 
 endpoint = 'https://bengarlock.com/api/v1/price_scanner/favorites/'
 
@@ -52,4 +53,8 @@ def run_scan():
         driver.quit()
 
 
-run_scan()
+n = True
+
+while n:
+    run_scan()
+    time.sleep(86400)
