@@ -1,3 +1,5 @@
+import datetime
+
 from selenium import webdriver
 import requests
 import platform
@@ -23,7 +25,7 @@ def detect_system():
 
 
 def push_price(favorite, price):
-    print(favorite, price)
+    print(favorite['name'], price)
     payload = {
         'price': price,
         'favorite': favorite['id']
@@ -57,5 +59,6 @@ def run_scan():
 n = True
 while n:
     run_scan()
+    print(f"Last Run Time - " + str(datetime.datetime.now()))
     print("Waiting 24 hours...")
     time.sleep(86400)
