@@ -33,8 +33,9 @@ def push_price(favorite, price):
 
 def run_scan():
     favorites = requests.get(f'{endpoint}').json()
+    driver = detect_system()
     for favorite in favorites:
-        driver = detect_system()
+
         driver.get(favorite['url'])
         item_name = driver.find_element_by_id("productTitle")
         try:
@@ -50,11 +51,10 @@ def run_scan():
             }
             requests.patch(url=f'{endpoint}' + str(favorite['id']) + '/', data=payload)
         push_price(favorite, price.text)
-        driver.quit()
+    driver.quit()
 
 
 n = True
-
 while n:
     run_scan()
     print("Waiting 24 hours...")
