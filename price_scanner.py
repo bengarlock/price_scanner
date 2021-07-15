@@ -36,12 +36,13 @@ def push_price(favorite, price):
 def run_scan():
     favorites = requests.get(f'{endpoint}').json()
     driver = detect_system()
+    driver.minimize_window()
     for favorite in favorites:
-
         driver.get(favorite['url'])
         item_name = driver.find_element_by_id("productTitle")
         try:
             price = driver.find_element_by_id("priceblock_ourprice")
+
         except:
             price = driver.find_element_by_id("priceblock_saleprice")
 
