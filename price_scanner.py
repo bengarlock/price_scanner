@@ -42,10 +42,9 @@ def run_scan():
         item_name = driver.find_element_by_id("productTitle")
         try:
             price = driver.find_element_by_id("priceblock_ourprice")
-
+            print(favorite['url'])
         except:
-            price = driver.find_element_by_id("priceblock_saleprice")
-
+            pass
         picture = driver.find_element_by_css_selector('#landingImage').get_attribute('src')
         if favorite['name'] == '':
             payload = {
